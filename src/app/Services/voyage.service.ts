@@ -32,5 +32,11 @@ export class VoyageService {
       "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"]),
     
     ]
+    getVoyage(){
+      return this.lesVoyages;
+    }
+    getVoyageByid(id:string){
+      
+    }
   constructor() { }
 }

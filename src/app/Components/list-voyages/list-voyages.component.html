@@ -1,0 +1,8 @@
+<p>list-voyages works!</p>
+<ul>
+    <li *ngFor="let voyage of listVoyages">
+        {{voyage.libelle}}
+        <br/> {{voyage.dateDepart|date:'dd/MM/yyyy'}} -->{{voyage.dateArrive|date:'dd/MM/yyyy'}}
+        <a [routerLink]="['/list-Voyages',voyage.id]"> Détail</a>
+    </li>
+</ul>

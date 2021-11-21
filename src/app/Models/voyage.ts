@@ -6,8 +6,8 @@ export class Voyage {
         public photo:string,
         public prix:number,
         public nouveau:boolean,
-        public DateDépart:Date,
-        public DateArrivé:Date,
+        public dateDepart:Date,
+        public dateArrive:Date,
         public destination: Séjour[],
         public ServicesNonInculs:string[]){}
 }
