@@ -10,10 +10,12 @@ import { VoyageService } from 'src/app/Services/voyage.service';
 })
 export class ListVoyagesComponent implements OnInit {
  listVoyages:Voyage[]=[];
-  constructor(private voyageService:VoyageService,private activatedRoute:ActivatedRoute) { }
+  constructor(private voyageService:VoyageService,) { }
+  
 
   ngOnInit(): void {
  this.listVoyages=this.voyageService.getVoyage();
+ 
   }
 
 }

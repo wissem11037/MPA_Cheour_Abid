@@ -1,0 +1,10 @@
+<img class="card-img-top" [src]="v.photo" alt="Card image cap">
+<div class="card-body">
+    <h5 class="card-title"> {{v.libelle}}</h5>
+
+    <p class="card-text">Départ le: <br> {{v.dateDepart|date:"d MMMM YYYY"}}</p>
+    <p class="card-text">Arrivé le: <br> {{v.dateArrive|date:"d MMMM YYYY"}}</p>
+    <p class="card-text"><small class="text-muted">A partir de {{v.prix }}<sup>DT</sup></small></p>
+
+    <a [routerLink]="['/list-Voyages',v.id]"> Détail</a>
+</div>
