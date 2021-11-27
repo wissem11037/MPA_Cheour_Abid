@@ -1,0 +1,15 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+
+.button {
+    padding-right: 1rem;
+}
+.logo {
+    padding-top: 5px;
+}
+img {
+    height: 50px;
+
+}

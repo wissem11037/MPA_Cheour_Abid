@@ -1,10 +1,12 @@
-<img class="card-img-top" [src]="v.photo" alt="Card image cap">
-<div class="card-body">
-    <h5 class="card-title"> {{v.libelle | titlecase }}</h5>
+<div class="card">
+    <img class="card-img-top img-fluid" [src]="v.photo" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title"> {{v.libelle | titlecase }}</h5>
 
-    <p class="card-text">Départ le: <br> {{v.dateDepart|date:"d MMMM YYYY"}}</p>
-    <p class="card-text">Retour le: <br> {{v.dateArrive|date:"d MMMM YYYY"}}</p>
-    <p class="card-text"><small class="text-muted">A partir de {{v.prix }}<sup>DT</sup></small></p>
+        <p class="card-text">Départ le: <br> {{v.dateDepart|date:"d MMMM YYYY"}}</p>
+        <p class="card-text">Retour le: <br> {{v.dateArrive|date:"d MMMM YYYY"}}</p>
+        <p class="card-text"><small class="text-muted">A partir de {{v.prix }}<sup>DT</sup></small></p>
 
-    <a [routerLink]="['/list-Voyages',v.id]"> Détail</a>
+        <a [routerLink]="['/list-Voyages',v.id]"> Détail</a>
+    </div>
 </div>

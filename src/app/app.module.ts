@@ -12,6 +12,8 @@ import { AccueilComponent } from './components/accueil/accueil.component';
 import { VoyageComponent } from './components/voyage/voyage.component';
 import { VoyageCardsComponent } from './components/voyage-cards/voyage-cards.component';
 import { DateVoyagePipe } from './Pipes/date-voyage.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import { DateVoyagePipe } from './Pipes/date-voyage.pipe';
     AccueilComponent,
     VoyageComponent,
     VoyageCardsComponent,
-    DateVoyagePipe,
+    DateVoyagePipe
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

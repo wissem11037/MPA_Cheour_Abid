@@ -1,12 +1,16 @@
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link" routerLinkActive="actif" routerLink="/accueil">Best Tunisia Travel</a></li>
-    <li class="nav-item">
-        <a class="nav-link" routerLinkActive="actif" routerLink="/accueil">Acceuil</a></li>
-    <li class="nav-item ">
-        <a class="nav-link " routerLinkActive="actif " routerLink="/list-Voyages">Voyages</a></li>
-    <li class="nav-item ">
-        <a class="nav-link " routerLinkActive="actif " routerLink="/aboutus">About us</a></li>
-    <li class="nav-item ">
-        <a class="nav-link " routerLinkActive="actif " routerLink="/aboutus">Admin</a></li>
-</ul>
+<mat-toolbar color="primary" class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div>
+        <button mat-raised-button color="accent"> 
+            <mat-icon>airplanemode_active</mat-icon>
+            Best Tunisia Travel</button>
+        <button mat-flat-button routerLink="/accueil" color="primary">Accueil</button>
+        <button mat-flat-button routerLink="/list-Voyages" color="primary">Voyages</button>
+        <button mat-flat-button routerLink="/aboutus" color="primary">About us</button>
+    </div>
+    <span class="spacer"></span>
+    <div>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>settings</mat-icon>
+        </button>
+    </div>
+  </mat-toolbar>
