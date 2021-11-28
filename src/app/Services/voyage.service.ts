@@ -109,8 +109,8 @@ export class VoyageService {
               "5",
               //pays destination
               "thailande",
-              "https://image.resabooking.com/images/images_og/img_malaisie.jpg",
-              3500,
+              "https://images.moneycontrol.com/static-mcnews/2021/10/phuket-770x433.png?impolicy=website&width=770&height=431",
+              4500,
               //type d'offre (nouvelle ou non)
               false,
               new Date(2021,2,19),
@@ -159,7 +159,7 @@ export class VoyageService {
                   //pays destination
                   "london",
                   "https://media.istockphoto.com/photos/madrid-spain-on-gran-via-picture-id514769480?k=20&m=514769480&s=612x612&w=0&h=vQ1NbztcLP1Rr7irt5MPq-A387sYkkD7eNGFaH3Uv6k=",
-                  1200,
+                  2000,
                   //type d'offre (nouvelle ou non)
                   true,
                   new Date(2021,1,1),
@@ -207,6 +207,8 @@ export class VoyageService {
     getVoyage(){
       return this.lesVoyages;
     }
-    
+    getVoyageById(id:string){
+      return this.lesVoyages.filter(voyage =>voyage.id==id);  
+    }
   constructor() { }
 }
