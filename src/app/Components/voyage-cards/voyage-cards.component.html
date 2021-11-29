@@ -7,6 +7,6 @@
         <p class="card-text">Retour le: <br> {{v.dateArrive|date:"d MMMM YYYY"}}</p>
         <p class="card-text"><small class="text-muted">A partir de {{v.prix }}<sup>DT</sup></small></p>
 
-        <a [routerLink]="['/list-Voyages',v.id]"> Détail</a>
+        <a [routerLink]="['/user/list-Voyages',v.id]"> Détail</a>
     </div>
 </div>

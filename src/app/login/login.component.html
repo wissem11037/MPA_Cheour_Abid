@@ -1,0 +1,21 @@
+<div class="login-wrapper">
+    <mat-card>
+        <mat-card-content>
+            <form class="form-signin" (ngSubmit)="Login()" [formGroup]="SignInForm" class="text-center">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Login</mat-label>
+                    <input matInput type="text" formControlName="username">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                </mat-form-field>
+                <br>
+                <div class="button">
+                    <button type="submit" mat-button>Login</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

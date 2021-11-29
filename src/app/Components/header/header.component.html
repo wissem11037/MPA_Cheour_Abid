@@ -3,14 +3,15 @@
         <button mat-raised-button color="accent"> 
             <mat-icon>airplanemode_active</mat-icon>
             Best Tunisia Travel</button>
-        <button mat-flat-button routerLink="/accueil" color="primary">Accueil</button>
-        <button mat-flat-button routerLink="/list-Voyages" color="primary">Voyages</button>
-        <button mat-flat-button routerLink="/aboutus" color="primary">About us</button>
+        <button mat-flat-button routerLink="/user/accueil" color="primary">Accueil</button>
+        <button mat-flat-button routerLink="/user/list-Voyages" color="primary">Voyages</button>
+        <button mat-flat-button routerLink="/user/aboutus" color="primary">About us</button>
     </div>
     <span class="spacer"></span>
     <div>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" *ngIf="false">
         <mat-icon>settings</mat-icon>
         </button>
+        <button mat-flat-button routerLink="/user/login">Login</button>
     </div>
   </mat-toolbar>
