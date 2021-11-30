@@ -53,7 +53,7 @@ export class VoyageService {
          //declaration du tableau des ServicesNonInculs
         ["Le timbre de voyage",
         "l’assurance et les options",
-        "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"]),
+        "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"],"Explore the Charming captial of Turkey and visit many of it's wonderful sites like Hagia Sophia,dolmabahçe palace,Rumeli Fortress and many more!"),
          //*************** voyage numero 3  ***********************
         new Voyage(
           "3",
@@ -175,7 +175,7 @@ export class VoyageService {
                    //declaration du tableau des ServicesNonInculs
                   ["Le timbre de voyage",
                   "l’assurance et les options",
-                  "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"]),
+                  "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"],"Visit London's most famous landmarks on one of the best London sightseeing tours"),
                   //*************** voyage numero 8 ***********************
                   new Voyage(
                     "8",
@@ -201,7 +201,7 @@ export class VoyageService {
                      //declaration du tableau des ServicesNonInculs
                     ["Le timbre de voyage",
                     "l’assurance et les options",
-                    "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"]),
+                    "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"],""),
                   
     ]
     getVoyage(){

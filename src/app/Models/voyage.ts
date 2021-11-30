@@ -9,5 +9,6 @@ export class Voyage {
         public dateDepart?:Date,
         public dateArrive?:Date,
         public destination?: Séjour[],
-        public ServicesNonInculs?:string[]){}
+        public ServicesNonInculs?:string[],
+        public description?:string){}
 }

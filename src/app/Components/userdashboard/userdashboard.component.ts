@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class UserdashboardComponent implements OnInit {
 
   constructor() { }
-
+  onActive(){
+    window.scroll(0,0);
+  }
   ngOnInit(): void {
   }
 

@@ -19,5 +19,5 @@ export class VoyageComponent implements OnInit {
     this.identifiant= this.activatedRoute.snapshot.params['idv'];
     this.voyage=this.voyageService.getVoyageById(this.identifiant);
   }
-  
+   
 }
