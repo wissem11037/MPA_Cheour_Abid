@@ -201,14 +201,16 @@ export class VoyageService {
                      //declaration du tableau des ServicesNonInculs
                     ["Le timbre de voyage",
                     "l’assurance et les options",
-                    "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"],""),
+                    "PCR Covid-19 avant départ : 170 Dt / Avant retour : 35$"],"Explore the USA like you have never seen before,visit the most popular cities like New York, Los Angeles and Las Vegas.visit the statue of liberty,Universal studios,Hollywood Street and many more! "),
                   
     ]
+    
     getVoyage(){
       return this.lesVoyages;
     }
     getVoyageById(id:string){
       return this.lesVoyages.filter(voyage =>voyage.id==id);  
     }
+  
   constructor() { }
 }

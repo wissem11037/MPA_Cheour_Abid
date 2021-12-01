@@ -10,21 +10,21 @@
     <!-- Inner content -->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="images/sailboat-01.jpg" class="d-block w-100" alt="Sailboat 1" />
+            <img [src]="lesVoyages[random1].photo" class="d-block w-100" alt="Sailboat 1" />
             <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some placeholder text to describe the image.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="images/sailboat-02.jpg" class="d-block w-100" alt="Sailboat 2" />
+            <img [src]="lesVoyages[random2].photo" class="d-block w-100" alt="Sailboat 2" />
             <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some placeholder text to describe the image.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="images/sailboat-03.jpg" class="d-block w-100" alt="Sailboat 3" />
+            <img [src]="lesVoyages[random3].photo" class="d-block w-100" alt="Sailboat 3" />
             <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some placeholder text to describe the image.</p>
@@ -56,7 +56,7 @@
                 <h1>About Us</h1>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-                <button mat-raised-button color="accent">Learn more</button>
+                <button mat-raised-button color="accent" [routerLink]="['/user/aboutus']">Learn more</button>
             </div>
         </div>
     </div>
