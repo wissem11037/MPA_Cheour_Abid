@@ -1,0 +1,23 @@
+<div class="card">
+    <img class="card-img-top img-fluid" [src]="v.photo" alt="Card image cap">
+    <div class="card-body text-center flex-column">
+        <h1 class="card-title "> {{v.libelle | titlecase }}</h1>
+        <mat-divider></mat-divider>
+        <div class="card-text d-flex flex-column justify-content-evenly">
+            <div class="dateDiv">
+                <p class="mat-caption" >Départ le: </p>
+                <h3 class="date">{{v.dateDepart|date:"d MMMM YYYY"}}</h3>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="dateDiv">
+                <p class="mat-caption">Retour le: </p>
+                <h3 class="date">{{v.dateArrive|date:"d MMMM YYYY"}}</h3>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="card-text d-flex mt-2 justify-content-evenly">
+            <button mat-flat-button color="primary" class="">A partir de {{v.prix }}<sup>DT</sup></button>
+            <button [routerLink]="['/user/list-Voyages',v.id]" mat-flat-button color="warn"> Détail</button>
+        </div>
+    </div>
+</div>

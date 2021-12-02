@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserdashboardComponent } from '../userdashboard/userdashboard.component';
-import { LoginComponent } from 'src/app/login/login.component';
-import { AboutUsComponent } from '../about-us/about-us.component';
-import { AccueilComponent } from '../accueil/accueil.component';
-import { ListVoyagesComponent } from '../list-voyages/list-voyages.component';
-import { VoyageComponent } from '../voyage/voyage.component';
+import { LoginComponent } from './login/login.component';
+
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ListVoyagesComponent } from './list-voyages/list-voyages.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { VoyageComponent } from './voyage/voyage.component';
+
 
 const routes: Routes = [
   /** 
 
   */
+ 
   {
+    
     path: '',
     component: UserdashboardComponent,
     children: [
@@ -22,7 +26,9 @@ const routes: Routes = [
       { path: "login", component: LoginComponent },
       { path: '', redirectTo: '/user/accueil', pathMatch: 'full' }
     ]
+    
   }
+   
 ];
 
 @NgModule({

@@ -2,9 +2,12 @@
 
     <!-- Indicators -->
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-current="true" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-current="true" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-current="true"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-current="true"
+            aria-label="Slide 3"></button>
     </div>
 
     <!-- Inner content -->
@@ -36,26 +39,31 @@
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-      </button>
+    </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
+    </button>
 </div>
 
 <mat-divider></mat-divider>
 
 <!-- About us section -->
-<section id="about-us">
+<section>
     <div class="container">
         <div class="row align-items-center">
             <div class="col">
-                <img src="https://www.hotelmize.com/wp-content/uploads/2020/07/different_types_of_travelers_served_by_travel_agencies-01.jpg" class="img-fluid" alt="About Us">
+                <img src="https://www.hotelmize.com/wp-content/uploads/2020/07/different_types_of_travelers_served_by_travel_agencies-01.jpg"
+                    class="img-fluid" alt="About Us">
             </div>
             <div class="col text-col">
                 <h1>About Us</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+                    pede.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+                    pede.</p>
                 <button mat-raised-button color="accent" [routerLink]="['/user/aboutus']">Learn more</button>
             </div>
         </div>
@@ -65,40 +73,39 @@
 <mat-divider></mat-divider>
 
 <!-- New section -->
-<section id="new">
+<section>
     <div class="container">
-        <div class="row align-items-center new">
+        <div class="row new">
             <div class="col">
                 <h1>New!</h1>
                 <p>here you can find our newest offers!</p>
             </div>
         </div>
-
-        <div class="row align-items-center text-center">
-            <ng-container *ngFor="let v of lesVoyages">
-                <div class="col" *ngIf="v.nouveau==true">
-                    <div class="card mb-3">
-                        <img [src]="v.photo" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-body">
-                                <h5 class="card-title">{{v.libelle |uppercase}}</h5>
+        <div class="container">
+            <div class="row">
+                <ng-container *ngFor="let v of lesVoyages">
+                    <div class="col-4 " *ngIf="v.nouveau==true">
+                        <div class="card d-flex flex-column justify-content-between align-items-stretch h-100">
+                            <img [src]="v.photo" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title ">{{v.libelle |uppercase}}</h5>
                                 <p class="card-text">
                                     {{v.description}}
                                 </p>
-                                <button mat-raised-button color="accent" [routerLink]="['/user/list-Voyages',v.id]">Starts At {{v.prix }}<sup>DT</sup></button>
+                                <button class="align-self-end" mat-raised-button color="accent"
+                                    [routerLink]="['/user/list-Voyages',v.id]">Starts At {{v.prix}}<sup>DT</sup>
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </ng-container>
-            <button mat-raised-button color="accent" [routerLink]="['/user/list-Voyages']">Explore all of our offers</button>
-
-
+                </ng-container>
+            </div>
         </div>
-
+        <div class="container text-center">
+            <button mat-raised-button class="text-center" color="accent" [routerLink]="['/user/list-Voyages']">
+                Explore all of our offers
+            </button>
+        </div>
 
     </div>
 </section>
-
-<!--<a routerLinkActive="actif" routerLink="/list-Voyages">Voyages</a> -->
-<!-- <button (click)="onVoyages()">Voyages</button> -->
