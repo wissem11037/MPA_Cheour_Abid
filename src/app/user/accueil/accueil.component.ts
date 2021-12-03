@@ -23,7 +23,9 @@ export class AccueilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.lesVoyages=this.voyageService.getVoyage();
+    this.voyageService.getVoyages()
+    .subscribe (data => this.lesVoyages = data);
+    
     this.length=this.lesVoyages.length;
     this.random1=Math.floor(Math.random() * (this.lesVoyages.length ));
     this.random2=Math.floor(Math.random() * (this.lesVoyages.length ));

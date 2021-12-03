@@ -1,4 +1,4 @@
-<div class="container" *ngFor="let v of voyage">
+<div class="container" *ngFor="let v of lesvoyages">
     <h1>{{v.libelle | titlecase }}</h1>
     <img [src]="v.photo" />
     <h2>Programme du séjour </h2> <br> <br>
@@ -65,8 +65,8 @@
             <mat-step>
                 <ng-template matStepLabel>Done!</ng-template>
                 <img class="mx-auto d-block" src="/assets/images/done.svg" id="done" alt="">
-                <p class="text-center">That's it! <br> Click on submit to send us your reservation or reset to start
-                    over.</p>
+                <p class="text-center">That's it! <br> Click on submit to send us your reservation or reset to start over.
+                </p>
                 <section class="text-center">
                     <button mat-button matStepperPrevious>Back</button>
                     <button mat-raised-button color="accent">Reset</button>

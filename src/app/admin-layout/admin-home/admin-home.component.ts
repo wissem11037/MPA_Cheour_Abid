@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Voyage } from 'src/app/Models/voyage';
+import { VoyageService } from 'src/app/Services/voyage.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-home.component.css']
 })
 export class AdminHomeComponent implements OnInit {
-
-  constructor() { }
-
+  lesVoyages:Voyage[]=[];
+  constructor(private voyageService:VoyageService) { }
+  
   ngOnInit(): void {
+    this.voyageService.getVoyages()
+     .subscribe (data => this.lesVoyages = data);
   }
 
 }

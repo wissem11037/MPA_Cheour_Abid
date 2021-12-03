@@ -14,7 +14,8 @@ export class ListVoyagesComponent implements OnInit {
   
 
   ngOnInit(): void {
- this.listVoyages=this.voyageService.getVoyage();
+    this.voyageService.getVoyages()
+    .subscribe (data => this.listVoyages = data);
  
   }
 
