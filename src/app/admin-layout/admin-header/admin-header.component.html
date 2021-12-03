@@ -1,13 +1,19 @@
-<mat-toolbar color="primary" class="py-3 navbar navbar-expand-lg fixed-top">
-    <div class="d-flex">
-
-        <button mat-raised-button color="accent"> 
-            <mat-icon>airplanemode_active</mat-icon>
-            Best Tunisia Travel</button>
-
-        <button mat-flat-button color="primary">Accueil</button>
-        <button mat-flat-button color="primary">Voyages</button>
-        <button mat-flat-button color="primary">About us</button>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <div>
+      <a class="navbar-brand">BTT Admin</a>
+      <button mat-icon-button color="accent" routerLink="/admin/home" aria-label="Example icon button with a home icon">
+        <mat-icon>home</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" routerLink="/admin/add-voyage" aria-label="Example icon button with a home icon">
+        <mat-icon>add_box</mat-icon>
+      </button>
     </div>
-
-</mat-toolbar>
+    <span class="spacer"></span>
+    <button mat-raised-button routerLink="/user/accueil">Logout</button>
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

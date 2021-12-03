@@ -8,7 +8,7 @@ import { AdminFooterComponent } from './admin-footer/admin-footer.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddVoyageComponent } from './add-voyage/add-voyage.component';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminDashboardComponent,
     AdminHeaderComponent,
     AdminFooterComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AddVoyageComponent
   ],
   imports: [
     CommonModule,

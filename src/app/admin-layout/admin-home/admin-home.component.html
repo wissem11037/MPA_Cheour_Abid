@@ -1,3 +1,68 @@
-<div class="container">
-    {{lesVoyages[0]|json}}
+
+<div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered border-light table-hover text-center">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">libelle</th>
+                    <th scope="col">image</th>
+                    <th scope="col">prix</th>
+                    <th scope="col">nouveau</th>
+                    <th scope="col">dateDepart</th>
+                    <th scope="col">dateArrive</th>
+                    <th scope="col">destination</th>
+                    <th scope="col">description</th>
+                    <th scope="col">actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let v of lesVoyages">
+                    <th scope="row">{{v.id}}</th>
+                    <td>{{v.libelle}}</td>
+                    <td> <img [src]="v.photo" height="100px" width="100px" alt=""></td>
+                    <td>{{v.prix}}</td>
+                    <td> {{v.nouveau}} </td>
+                    <td> {{v.dateDepart|date:"d MMMM YYYY"}} </td>
+                    <td> {{v.dateArrive|date:"d MMMM YYYY"}} </td>
+                    <td>
+                        <!-- {{v.destination|json}}-->
+
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Click here for details
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-sm table-light ">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#Jour</th>
+                                            <th scope="col">destination</th>
+                                            <th scope="col">description</th>
+                                            <th scope="col">image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let sej of v.destination">
+                                            <th scope="row">{{sej.nbJour}}</th>
+                                            <td>{{sej.destination}}</td>
+                                            <td>{{sej.description}}</td>
+                                            <td>{{sej.image}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </mat-expansion-panel>
+                    </td>
+                    <td> {{v.description}} </td>
+                    <td>
+                        <button mat-raised-button color="accent">Modifier</button>
+                        <button mat-raised-button color="warn">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

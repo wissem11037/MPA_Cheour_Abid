@@ -1,0 +1,58 @@
+<div class="container">
+    <h1>Add a new trip</h1>
+    <form [formGroup]="VoyageForm">
+        <!-- +string(libelle) +string(image) +number(prix) +boolean(nouveau) +date(depart) +date(arrive) (sejour) string(description|textarea)-->
+        <!-- string(destination) string(description|textarea) string(image) -->
+        <mat-form-field appearance="fill">
+            <mat-label>Libelle</mat-label>
+            <input matInput formControlName="libelle">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Image</mat-label>
+            <input matInput formControlName="image">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Prix</mat-label>
+            <input matInput type="number" formControlName="prix"> 
+        </mat-form-field>
+        <br>
+        <mat-checkbox formControlName="nouveau">Nouveau</mat-checkbox>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate formControlName="depart" placeholder="Start date">
+                <input matEndDate formControlName="arrive" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+        <button mat-raised-button color="primary" >Add Sejour</button>
+        <!--sejour-->
+        <div class="d-flex justify-content-between alert alert-secondary" formArrayName="sejour">
+            <h2>Sejour N°</h2>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Libelle</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Image</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
