@@ -1,0 +1,16 @@
+.container {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+button {
+    margin:10px;
+}
+
+mat-form-field  {
+    width: 30%;
+}
+
+mat-divider{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

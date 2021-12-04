@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddVoyageComponent } from './add-voyage/add-voyage.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ModifyVoyageComponent } from './modify-voyage/modify-voyage.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,7 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     children: [
       {path:"home",component:AdminHomeComponent},
+      { path: "home/:idv", component: ModifyVoyageComponent },
       {path:"add-voyage",component:AddVoyageComponent},
       { path: '', redirectTo: '/admin/home', pathMatch: 'full' }
     ]

@@ -16,7 +16,7 @@ import{concatMap,filter,map} from 'rxjs/operators';
 export class VoyageComponent implements OnInit {
   
   lesvoyages: Voyage[] = [];
-  identifiant: string = "";
+  identifiant: number = 0;
 
   reservationForm:FormGroup = new FormGroup({});
   

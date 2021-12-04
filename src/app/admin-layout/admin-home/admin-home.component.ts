@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Voyage } from 'src/app/Models/voyage';
 import { VoyageService } from 'src/app/Services/voyage.service';
 
@@ -8,12 +9,19 @@ import { VoyageService } from 'src/app/Services/voyage.service';
   styleUrls: ['./admin-home.component.css']
 })
 export class AdminHomeComponent implements OnInit {
-  lesVoyages:Voyage[]=[];
-  constructor(private voyageService:VoyageService) { }
-  
+  lesVoyages: Voyage[] = [];
+  constructor(private voyageService: VoyageService,private router:Router) { }
+
+
+  onSupprimer(id: number) {
+    this.voyageService.deleteVoyage(id)
+    .subscribe();
+    window.location.reload();
+  }
+
   ngOnInit(): void {
     this.voyageService.getVoyages()
-     .subscribe (data => this.lesVoyages = data);
+      .subscribe(data => this.lesVoyages = data);
   }
 
 }

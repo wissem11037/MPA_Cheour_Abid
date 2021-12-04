@@ -58,8 +58,8 @@
                     </td>
                     <td> {{v.description}} </td>
                     <td>
-                        <button mat-raised-button color="accent">Modifier</button>
-                        <button mat-raised-button color="warn">Supprimer</button>
+                        <button mat-raised-button color="accent" [routerLink]="['/admin/home',v.id]">Modifier</button>
+                        <button mat-raised-button color="warn" (click)="onSupprimer(v.id!)">Supprimer</button>
                     </td>
                 </tr>
             </tbody>
