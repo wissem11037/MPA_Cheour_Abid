@@ -16,7 +16,7 @@ export class AdminHomeComponent implements OnInit {
   onSupprimer(id: number) {
     this.voyageService.deleteVoyage(id)
     .subscribe();
-    window.location.reload();
+    this.lesVoyages=this.lesVoyages.filter(v=>v.id!=id);
   }
 
   ngOnInit(): void {

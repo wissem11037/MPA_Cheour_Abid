@@ -1,4 +1,8 @@
 <div class="container">
+    <form>
+        <input type="text" #txt class="form-control">
+        <input type="button" value="Rechercher" class="btn btn-warning" (click)="onChercher(txt.value)">
+    </form>
     <div class="row">
         <div class="col-4" *ngFor="let voyage of listVoyages">
             <app-voyage-cards [voyageParent]="voyage"></app-voyage-cards>

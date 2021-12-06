@@ -7,7 +7,7 @@ import { Voyage } from 'src/app/Models/voyage';
   styleUrls: ['./voyage-cards.component.css']
 })
 export class VoyageCardsComponent implements OnInit {
-  @Input("voyageParent") v: Voyage=new Voyage();
+  @Input("voyageParent") v: Voyage;
   constructor() { }
   
 

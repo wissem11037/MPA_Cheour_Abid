@@ -11,7 +11,9 @@ import { VoyageService } from 'src/app/Services/voyage.service';
 export class ListVoyagesComponent implements OnInit {
  listVoyages:Voyage[]=[];
   constructor(private voyageService:VoyageService,) { }
-  
+  onChercher(chaine:string){
+    this.listVoyages=this.listVoyages.filter(v=>v.libelle.toLowerCase().search(chaine.toLowerCase())>=0);
+  }
 
   ngOnInit(): void {
     this.voyageService.getVoyages()
