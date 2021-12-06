@@ -1,7 +1,8 @@
 .carousel-item {
-	height: 32rem;
-	background: #777;
-	color: white;
+	margin-top: 3rem;
+	height: 40rem;
+	background: white;
+	color: rgb(0, 0, 0);
 }
 
 .carText {
@@ -19,7 +20,7 @@ section {
 section h1 {
 	text-transform: uppercase;
 	font-weight: 900;
-	color: #683aa4;
+	color: #E53935;
 	text-align: left;
 	margin-bottom: 20px;
 }
@@ -53,4 +54,18 @@ button {
 .card:hover {
     transform: scale(1.07);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+
+#carousel1 {
+	height: 37rem;
+	margin-top: 2rem;
+	margin-left: 50rem;
+}
+.carousel-caption {
+	margin-right: 60rem;
+	margin-bottom: 10rem;
+}
+
+mat-divider {
+	margin-top: 4rem;
 }
