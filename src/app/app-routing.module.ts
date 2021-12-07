@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErreurComponent } from './components/erreur/erreur.component';
+import { BackOfficeGuard } from './guards/back-office.guard';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canActivate: [BackOfficeGuard],
     loadChildren: () =>
       import('./admin-layout/admin-layout.module').then((m) => m.AdminLayoutModule),
   },

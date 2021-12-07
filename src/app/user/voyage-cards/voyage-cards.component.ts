@@ -8,8 +8,8 @@ import { Voyage } from 'src/app/Models/voyage';
 })
 export class VoyageCardsComponent implements OnInit {
   @Input("voyageParent") v: Voyage;
+
   constructor() { }
-  
 
   ngOnInit(): void {
   }

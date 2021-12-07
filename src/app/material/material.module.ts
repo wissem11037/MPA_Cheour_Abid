@@ -11,6 +11,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 const material = [
   MatToolbarModule,
@@ -24,7 +27,8 @@ const material = [
   MatCheckboxModule,
   MatExpansionModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  FontAwesomeModule
 ]
 
 @NgModule({
@@ -35,4 +39,8 @@ const material = [
     material
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas,fab);
+  }
+ }

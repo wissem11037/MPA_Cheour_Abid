@@ -14,7 +14,7 @@ export class AuthentificationService {
   ];
 
   currentUser: string = "";
-  userState : boolean = false as boolean;
+  userState : boolean = false;
 
 
   isAuthenticated(): boolean {

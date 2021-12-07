@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   Login() {
     if (this.authentificationService.checkCredentials(this.SignInForm.value)) {
       this.authentificationService.currentUser = this.SignInForm.value.username;
-      this.authentificationService.userState = this.authentificationService.getUser(this.authentificationService.currentUser)?.isAdmin!;
+      this.authentificationService.userState = this.authentificationService.getUser(this.authentificationService.currentUser)?.isAdmin;
       if (this.authentificationService.userState){
         this.router.navigate(['/admin']);
       } else {
