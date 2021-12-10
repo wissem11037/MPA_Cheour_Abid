@@ -521,5 +521,17 @@
       ],
       "description": "Explore the USA like you have never seen before,visit the most popular cities like New York, Los Angeles and Las Vegas.visit the statue of liberty,Universal studios,Hollywood Street and many more! "
     }
+  ],
+  "Reservations": [
+    {
+      "lastName": "admin",
+      "firstName": "qsd",
+      "email": "rstg",
+      "phoneNumber": "0662966274",
+      "specDemand1": true,
+      "specDemand2": false,
+      "demand": "qsdqsd",
+      "id": 2
+    }
   ]
 }

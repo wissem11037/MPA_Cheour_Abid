@@ -4,6 +4,7 @@ import { AddVoyageComponent } from './add-voyage/add-voyage.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ModifyVoyageComponent } from './modify-voyage/modify-voyage.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       {path:"home",component:AdminHomeComponent},
       { path: "home/:idv", component: ModifyVoyageComponent },
       {path:"add-voyage",component:AddVoyageComponent},
+      {path:"reservations",component:ReservationComponent},
       { path: '', redirectTo: '/admin/home', pathMatch: 'full' }
     ]
   }

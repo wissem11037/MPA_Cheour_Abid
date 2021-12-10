@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { AddVoyageComponent } from './add-voyage/add-voyage.component';
 import { ModifyVoyageComponent } from './modify-voyage/modify-voyage.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ModifyVoyageComponent } from './modify-voyage/modify-voyage.component';
     AdminFooterComponent,
     AdminHomeComponent,
     AddVoyageComponent,
-    ModifyVoyageComponent
+    ModifyVoyageComponent,
+    ReservationComponent
   ],
   imports: [
     CommonModule,

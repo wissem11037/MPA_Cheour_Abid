@@ -1,4 +1,4 @@
-<div class="container" *ngFor="let v of lesvoyages">
+<!-- <div class="container" *ngFor="let v of lesvoyages">
     <h1>{{v.libelle | titlecase }}</h1>
     <img [src]="v.photo" />
     <h2>Programme du séjour </h2> <br> <br>
@@ -6,73 +6,58 @@
         <p>Jour {{sej.nbJour}}: {{sej.destination}}</p>
         <p>{{sej.description}}</p>
     </ng-container>
+</div> -->
+
+<div>
+
 </div>
 
 <mat-divider></mat-divider>
 
 <div class="container">
-    <mat-stepper orientation="vertical">
-        <form [formGroup]="reservationForm" (ngSubmit)="onSubmitForm()">
-            <mat-step>
-                <ng-template matStepLabel>Identification</ng-template>
-                <mat-form-field appearance="fill">
-                    <mat-label>Last Name</mat-label>
-                    <input matInput formControlName="lastName" required>
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill">
-                    <mat-label>First Name</mat-label>
-                    <input matInput formControlName="firstName" required>
-                </mat-form-field>
-                <section>
-                    <button mat-button matStepperNext>Next</button>
-                </section>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Contacts</ng-template>
-                <mat-form-field appearance="fill">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput formControlName="email" required>
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill">
-                    <mat-label>Phone Number</mat-label>
-                    <mat-icon matSuffix>phone</mat-icon>
-                    <input matInput formControlName="phoneNumber" required>
-                </mat-form-field>
-                <section>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
-                </section>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Special demands</ng-template>
-                <div class="check">
-                    <mat-checkbox formControlName="specDemand">Honeymoon</mat-checkbox>
-                    <br>
-                    <mat-checkbox formControlName="specDemand">Connecting rooms</mat-checkbox>
-                    <mat-divider></mat-divider>
-                    <mat-form-field appearance="fill" id="txtArea">
-                        <mat-label>Other</mat-label>
-                        <textarea matInput formControlName="demand"></textarea>
-                    </mat-form-field>
-                    <section>
-                        <button mat-button matStepperPrevious>Back</button>
-                        <button mat-button matStepperNext>Next</button>
-                    </section>
-                </div>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Done!</ng-template>
-                <img class="mx-auto d-block" src="/assets/images/done.svg" id="done" alt="">
-                <p class="text-center">That's it! <br> Click on submit to send us your reservation or reset to start over.
-                </p>
-                <section class="text-center">
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-raised-button color="accent">Reset</button>
-                    <button mat-raised-button color="primary">Submit</button>
-                </section>
-            </mat-step>
-        </form>
-    </mat-stepper>
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmitForm()">
+
+        <ng-template>Identification</ng-template>
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" required>
+        </mat-form-field>
+        <br>
+        <ng-template>Contacts</ng-template>
+        <mat-form-field appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <mat-icon matSuffix>phone</mat-icon>
+            <input matInput formControlName="phoneNumber" required>
+        </mat-form-field>
+        <ng-template>Special demands</ng-template>
+        <div class="check">
+            <mat-checkbox formControlName="specDemand1">Honeymoon</mat-checkbox>
+            <br>
+            <mat-checkbox formControlName="specDemand2">Connecting rooms</mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-form-field appearance="fill" id="txtArea">
+                <mat-label>Other</mat-label>
+                <textarea matInput formControlName="demand"></textarea>
+            </mat-form-field>
+        </div>
+        <ng-template>Done!</ng-template>
+        <img class="mx-auto d-block" src="/assets/images/done.svg" id="done" alt="">
+        <p class="text-center">That's it! <br> Click on submit to send us your reservation or reset to start
+            over.
+        </p>
+        <section class="text-center">
+            <button mat-raised-button color="accent" type="button">Reset</button>
+            <button mat-raised-button color="primary">Submit</button>
+        </section>
+    </form>
 </div>

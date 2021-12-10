@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Séjour } from '../Models/séjour';
 import { Voyage } from '../Models/voyage';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -18,9 +17,11 @@ export class VoyageService {
   }*/
 
   constructor(private http: HttpClient) { }
+
   getVoyages(): Observable<Voyage[]> {
     return this.http.get<Voyage[]>(URL);
   }
+
   addVoyage(v: Voyage): Observable<Voyage> {
     return this.http.post<Voyage>(URL, v);
   }
