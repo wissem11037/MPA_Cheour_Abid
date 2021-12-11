@@ -10,6 +10,7 @@ import { VoyageService } from 'src/app/Services/voyage.service';
 })
 export class AdminHomeComponent implements OnInit {
   lesVoyages: Voyage[] = [];
+  lesVoyagesFull: Voyage[] = [];
   constructor(private voyageService: VoyageService,private router:Router) { }
 
 
@@ -18,10 +19,15 @@ export class AdminHomeComponent implements OnInit {
     .subscribe();
     this.lesVoyages=this.lesVoyages.filter(v=>v.id!=id);
   }
-
+  onChercher(chaine:string){
+    this.lesVoyages=this.lesVoyagesFull;
+    this.lesVoyages=this.lesVoyages.filter(v=>v.libelle.toLowerCase().search(chaine.toLowerCase())>=0);
+  }
   ngOnInit(): void {
     this.voyageService.getVoyages()
       .subscribe(data => this.lesVoyages = data);
+      this.voyageService.getVoyages()
+      .subscribe(data => this.lesVoyagesFull = data);
   }
-
+ 
 }

@@ -1,5 +1,8 @@
-
 <div>
+    <form>
+        <input type="text" #txt class="form-control">
+        <input type="button" value="Rechercher" class="btn btn-warning" (click)="onChercher(txt.value)">
+    </form>
     <div class="table-responsive">
         <table class="table table-striped table-bordered border-light table-hover text-center">
             <thead>

@@ -28,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     VoyageComponent,
     VoyageCardsComponent,
     UserdashboardComponent,
-    LoginComponent
+    LoginComponent,
+    
     
   ],
   imports: [

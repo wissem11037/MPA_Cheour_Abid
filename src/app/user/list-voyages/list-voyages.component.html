@@ -1,7 +1,9 @@
 <div class="container">
     <form>
         <input type="text" #txt class="form-control">
-        <input type="button" value="Rechercher" class="btn btn-warning" (click)="onChercher(txt.value)">
+        <input type="button" value="Rechercher" class="btn btn-warning" (click)="onChercher(txt.value)"> <br>
+        <mat-checkbox (click)="onFilterUp()">PrixCroissant</mat-checkbox> <br>
+        <mat-checkbox (click)="onFilterDown()"> PrixDecroissant</mat-checkbox>
     </form>
     <div class="row">
         <div class="col-4" *ngFor="let voyage of listVoyages">

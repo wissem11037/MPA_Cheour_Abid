@@ -1,4 +1,4 @@
-<!-- <div class="container" *ngFor="let v of lesvoyages">
+<div class="container" *ngFor="let v of lesvoyages">
     <h1>{{v.libelle | titlecase }}</h1>
     <img [src]="v.photo" />
     <h2>Programme du séjour </h2> <br> <br>
@@ -6,7 +6,7 @@
         <p>Jour {{sej.nbJour}}: {{sej.destination}}</p>
         <p>{{sej.description}}</p>
     </ng-container>
-</div> -->
+</div>
 
 <div>
 
@@ -52,8 +52,7 @@
         </div>
         <ng-template>Done!</ng-template>
         <img class="mx-auto d-block" src="/assets/images/done.svg" id="done" alt="">
-        <p class="text-center">That's it! <br> Click on submit to send us your reservation or reset to start
-            over.
+        <p class="text-center">That's it! <br> Click on submit to send us your reservation or reset to start over.
         </p>
         <section class="text-center">
             <button mat-raised-button color="accent" type="button">Reset</button>
