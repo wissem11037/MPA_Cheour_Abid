@@ -1,5 +1,5 @@
 <div class="container">
-   <h1>Add a new trip</h1> <button mat-raised-button color="primary" (click)="onAdd()">Add the previous information</button>
+   <h1>Modify trip: [labeled {{voyage[0]?.libelle}} ID: {{voyage[0]?.id}}]</h1>
    <form [formGroup]="VoyageForm" (ngSubmit)="onSubmitForm()">
 
       <!-- +string(libelle) +string(image) +number(prix) +boolean(nouveau) +date(depart) +date(arrive) (sejour) string(description|textarea)-->
@@ -97,6 +97,17 @@
          </ng-container>
 
       </ng-container>
+
+      
+      <mat-divider></mat-divider>
+
+      <div formArrayName="ServicesNonInclus">
+        <button type="button" mat-raised-button color="primary" (click)="addServicesNonInclus()"> Ajouter Un service non inclus </button> <br>
+        <div *ngFor="let s of ServicesNonInclus.controls; index as j">
+            <label> Service non Inclus N°: {{j+1}}</label>
+            <input type="text" class="form-control" [formControlName]="j">
+        </div>
+    </div>
 
       <section class="text-center">
        <button mat-raised-button color="accent" type="submit" [disabled]="VoyageForm.invalid">Submit</button>

@@ -1,8 +1,5 @@
-{{lesreservations|json}}
 <div class="container">
     <div class="col-4" *ngFor="let r of lesreservations">
-        <ul>
-            <li>{{r.lastName}}</li>
-        </ul>
+        <app-reservation-card [reservation]="r"></app-reservation-card>
     </div>
 </div>

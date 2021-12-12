@@ -1,20 +1,64 @@
 <div class="container" *ngFor="let v of lesvoyages">
-    <h1>{{v.libelle | titlecase }}</h1>
-    <img [src]="v.photo" />
-    <h2>Programme du séjour </h2> <br> <br>
-    <ng-container *ngFor="let sej of v.destination">
-        <p>Jour {{sej.nbJour}}: {{sej.destination}}</p>
-        <p>{{sej.description}}</p>
-    </ng-container>
-</div>
+    <div class="container">
 
-<div>
+        <div>
 
+            <div class="row">
+                <div class="col">
+                    <img [src]="v.photo" class="img-fluid text-center" />
+                </div>
+                <div class="col">
+                    <h1 class="mb-5">//TRIP: {{v.libelle | titlecase }}</h1>
+                    <div class="d-flex flex-column justify-content-center">
+                    <h2>TAKE OFF: {{v.dateDepart|date:"d MMMM YYYY"}}</h2>
+                    <h2>LANDING: {{v.dateArrive|date:"d MMMM YYYY"}}</h2>
+                    <h2>PRICE: {{v.prix }}<sup>DT</sup></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <h1>Programme du séjour</h1>
+            <div>
+                <button mat-button (click)="accordion.openAll()">Expand All</button>
+                <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+            </div>
+            <mat-accordion multi>
+                <mat-expansion-panel *ngFor="let sej of v.destination">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Jour {{sej.nbJour}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{sej.destination}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    {{sej.description}}
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="mt-5">
+            <h1>Services Non Inclus</h1>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    Services Non Inclus
+                </mat-expansion-panel-header>
+                <ul>
+                    <li *ngFor="let sni of v.ServicesNonInclus">
+                        {{sni}}
+                    </li>
+                </ul>
+            </mat-expansion-panel>
+        </div>
+
+    </div>
 </div>
 
 <mat-divider></mat-divider>
 
 <div class="container">
+    <h1>place a reservation</h1>
     <form [formGroup]="reservationForm" (ngSubmit)="onSubmitForm()">
 
         <ng-template>Identification</ng-template>
@@ -50,10 +94,7 @@
                 <textarea matInput formControlName="demand"></textarea>
             </mat-form-field>
         </div>
-        <ng-template>Done!</ng-template>
-        <img class="mx-auto d-block" src="/assets/images/done.svg" id="done" alt="">
-        <p class="text-center">That's it! <br> Click on submit to send us your reservation or reset to start over.
-        </p>
+
         <section class="text-center">
             <button mat-raised-button color="accent" type="button">Reset</button>
             <button mat-raised-button color="primary">Submit</button>

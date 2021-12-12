@@ -13,9 +13,6 @@ img {
     box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
   }
 
-.date {
-    font-weight:bold;
-}
 
 .dateDiv {
     border:0.2px solid rgba(0,0,0,0.1);
@@ -26,6 +23,10 @@ img {
     font-weight: 900;
     color: #E53935;
     margin-bottom: 20px;
+}
+span {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 

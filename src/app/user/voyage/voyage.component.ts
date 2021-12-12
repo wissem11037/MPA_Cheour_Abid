@@ -1,11 +1,12 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { from } from 'rxjs';
+
 import { Voyage } from 'src/app/Models/voyage';
 import { VoyageService } from 'src/app/Services/voyage.service';
-import { concatMap, filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { ReservationService } from 'src/app/Services/reservation.service';
+import { MatAccordion } from '@angular/material/expansion';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,11 +16,18 @@ import { ReservationService } from 'src/app/Services/reservation.service';
   styleUrls: ['./voyage.component.css']
 })
 export class VoyageComponent implements OnInit {
-
+  @ViewChild(MatAccordion) accordion: MatAccordion;
   lesvoyages: Voyage[] = [];
+
+
   identifiant: number = 0;
 
   reservationForm: FormGroup = new FormGroup({});
+
+  today = new Date();
+  day = this.today.getDay();
+  month = this.today.getMonth();
+  year = this.today.getFullYear();
 
 
   constructor(private activatedRoute: ActivatedRoute, private voyageService: VoyageService,private reservationService:ReservationService, private fb: FormBuilder) { }
@@ -51,7 +59,11 @@ export class VoyageComponent implements OnInit {
           phoneNumber: [],
           specDemand1: [false],
           specDemand2: [false],
-          demand: ['']
+          demand: [''],
+          trip:[this.identifiant],
+          state:['In Progress'],
+          date:[new Date(this.year, this.month, this.day)]
+
     });
   }
 

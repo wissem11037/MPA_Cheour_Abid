@@ -5,22 +5,20 @@
         <mat-divider></mat-divider>
         <div class="card-text d-flex flex-column justify-content-evenly">
             
-            <div class="dateDiv ">
-                <fa-icon [icon]="['fas','plane-departure']"></fa-icon>
-                <p class="mat-caption" >Départ le: </p>
+            <div class="d-flex dateDiv justify-content-evenly">
+                <fa-icon [icon]="['fas','plane-departure']" class="me-3 fa-2x"></fa-icon>
                 <h3 class="date">{{v.dateDepart|date:"d MMMM YYYY"}}</h3>
             </div>
             <mat-divider></mat-divider>
             
-            <div class="dateDiv">
-                <fa-icon [icon]="['fas','plane-arrival']"></fa-icon>
-                <p class="mat-caption">Retour le: </p>
+            <div class="d-flex dateDiv justify-content-evenly">
+                <fa-icon [icon]="['fas','plane-arrival']"  class="me-3 fa-2x"></fa-icon>
                 <h3 class="date">{{v.dateArrive|date:"d MMMM YYYY"}}</h3>
             </div>
         </div>
         <mat-divider></mat-divider>
         <div class="card-text d-flex mt-2 justify-content-evenly">
-            <button mat-flat-button color="primary" class="">A partir de {{v.prix }}<sup>DT</sup></button>
+            <span>A partir de {{v.prix }}<sup>DT</sup></span>
             <button [routerLink]="['/user/list-Voyages',v.id]" mat-flat-button color="accent"> Détail</button>
         </div>
     </div>

@@ -22,6 +22,9 @@ export class AddVoyageComponent implements OnInit {
   get destination() {
     return this.VoyageForm.get('destination') as FormArray;
   }
+  get ServicesNonInclus() {
+    return this.VoyageForm.get('ServicesNonInclus') as FormArray;
+  }
 
 
   get dateDepart() {
@@ -43,6 +46,10 @@ export class AddVoyageComponent implements OnInit {
     }
   }
 
+  addServicesNonInclus(){
+    this.ServicesNonInclus.push(this.fb.control(''));
+  }
+
   addDestination(num: number) {
     let destinationForm = this.fb.group({
       nbJour: [num,],
@@ -61,11 +68,14 @@ export class AddVoyageComponent implements OnInit {
       nouveau: [false],
       dateDepart: [new Date(this.year, this.month, this.day)],
       dateArrive: [new Date(this.year, this.month, this.day)],
-      description: [''],
       destination: this.fb.array([
-      ])
+      ]),
+      ServicesNonInclus: this.fb.array([
+      ]),
+      description: ['']
     });
     this.destination.clear();
+    this.ServicesNonInclus.clear();
   }
 
   onSubmitForm(){
@@ -81,9 +91,11 @@ export class AddVoyageComponent implements OnInit {
       nouveau: [false],
       dateDepart: [new Date(this.year, this.month, this.day),Validators.required],
       dateArrive: [new Date(this.year, this.month, this.day),Validators.required],
-      description: ['',Validators.required],
       destination: this.fb.array([
-      ])
+      ]),
+      ServicesNonInclus: this.fb.array([
+      ]),
+      description: ['',Validators.required]
     });
   }
 

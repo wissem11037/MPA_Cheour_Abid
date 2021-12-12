@@ -69,3 +69,23 @@ button {
 mat-divider {
 	margin-top: 4rem;
 }
+
+#hero {
+	background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .7)),url(../../../assets/images/jason-ortego-TznjqhCHR9g-unsplash.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+#hero .container {
+    height: 45rem;
+}
+
+#hero button {
+	width: 7%;
+}
+
+.display-4 {
+	font-weight:700;
+	letter-spacing: 3px;
+	text-shadow: 3px 3px rgba(0,0,0, .4);
+}

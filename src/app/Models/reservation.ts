@@ -6,6 +6,9 @@ export class Reservation {
         public phoneNumber:number,
         public specDemand1:boolean,
         public specDemand2:boolean,
-        public demand:string
+        public demand:string,
+        public trip:number,
+        public date:Date,
+        public id:number
     ){}
 }

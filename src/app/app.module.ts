@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     ErreurComponent,
-    DateVoyagePipe
+    DateVoyagePipe,
     
   ],
   imports: [

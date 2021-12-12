@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-title text-center">
+        Reservation ID {{r.id}}
+    </div>
+    <div class="card-text">
+        <ul class="list-group">
+            <li class="list-group-item">Name: {{r.lastName|uppercase}} {{r.firstName}} </li>
+            <li class="list-group-item">email:{{r.email}}</li>
+            <li class="list-group-item">phone:{{r.phoneNumber}}</li>
+            <li class="list-group-item">honeymoon: <input class="form-check-input" disabled type="checkbox" [checked]="r.specDemand1"></li>
+            <li class="list-group-item">connecting rooms: <input class="form-check-input" disabled type="checkbox" [checked]="r.specDemand2"></li>
+            <li class="list-group-item">Request: {{r.specDemand1}} {{r.specDemand2}} {{r.demand}}</li>
+            <li class="list-group-item"> trip ID: {{r.trip}} </li>
+            <li class="list-group-item"> made in: {{r.date|date:"d MMMM YYYY"}} </li>
+        </ul>
+        <button mat-raised-button color="warn" class="" (click)="onSupprimer(r.id)">Supprimer</button>
+    </div>
+</div>

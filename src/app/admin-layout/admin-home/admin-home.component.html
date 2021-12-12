@@ -1,8 +1,9 @@
 <div>
-    <form>
-        <input type="text" #txt class="form-control">
-        <input type="button" value="Rechercher" class="btn btn-warning" (click)="onChercher(txt.value)">
-    </form>
+    <mat-form-field class="example-form-field ms-5 mt-2">
+        <mat-label>Type here...</mat-label>
+        <input matInput type="text" #txt>
+      </mat-form-field>
+      <button mat-button (click)="onChercher(txt.value)" class="ms-1 me-3">Search</button>
     <div class="table-responsive">
         <table class="table table-striped table-bordered border-light table-hover text-center">
             <thead>
@@ -16,6 +17,7 @@
                     <th scope="col">dateArrive</th>
                     <th scope="col">destination</th>
                     <th scope="col">description</th>
+                    <th scope="col">Services non inclus</th>
                     <th scope="col">actions</th>
                 </tr>
             </thead>
@@ -59,10 +61,29 @@
                             </div>
                         </mat-expansion-panel>
                     </td>
-                    <td> {{v.description}} </td>
+
+                    <td>
+                        {{v.description}}
+                    </td>
+
+                    <td>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Click here for details
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li *ngFor="let sni of v.ServicesNonInclus"> 
+                                    {{sni}}
+                                </li>
+                            </ul>
+                        </mat-expansion-panel>
+                        
+                    </td>
                     <td>
                         <button mat-raised-button color="accent" [routerLink]="['/admin/home',v.id]">Modifier</button>
-                        <button mat-raised-button color="warn" (click)="onSupprimer(v.id!)">Supprimer</button>
+                        <button mat-raised-button color="warn" (click)="onSupprimer(v.id)">Supprimer</button>
                     </td>
                 </tr>
             </tbody>

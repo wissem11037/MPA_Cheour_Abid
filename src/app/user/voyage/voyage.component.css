@@ -1,34 +1,54 @@
 .container {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
 }
-
-
 
 h3 {
-    color: orangered;
-}
-.mat-stepper-vertical {
-    margin-top: 8px;
-  }
-  
-  .mat-form-field {
-    margin-top: 16px;
-  }
-  .check, mat-checkbox {
-      margin:5px;
-  }
-  mat-form-field  {
-    width: 30%;
-}
-#txtArea {
-    width: 90%
-}
-button {
-    margin:5px;
+	color: orangered;
 }
 
-#done {
-    height:300px;
-    margin: 10px;
+.mat-stepper-vertical {
+	margin-top: 8px;
+}
+
+.mat-form-field {
+	margin-top: 16px;
+}
+
+.check,
+mat-checkbox {
+	margin: 5px;
+}
+
+mat-form-field {
+	width: 30%;
+}
+
+#txtArea {
+	width: 90%
+}
+
+button {
+	margin: 5px;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: 900;
+	color: #E53935;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+h2 {
+    text-transform: uppercase;
+	font-weight: 900;
+	color: #000000;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+mat-divider {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }

@@ -11,6 +11,7 @@ import { MaterialModule } from '../material/material.module';
 import { AddVoyageComponent } from './add-voyage/add-voyage.component';
 import { ModifyVoyageComponent } from './modify-voyage/modify-voyage.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationCardComponent } from './reservation-card/reservation-card.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     AdminHomeComponent,
     AddVoyageComponent,
     ModifyVoyageComponent,
-    ReservationComponent
+    ReservationComponent,
+    ReservationCardComponent
   ],
   imports: [
     CommonModule,

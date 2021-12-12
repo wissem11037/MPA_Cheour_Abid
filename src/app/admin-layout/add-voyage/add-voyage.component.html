@@ -54,7 +54,7 @@
 
        <mat-divider></mat-divider>
 
-       <a mat-raised-button color="primary" (click)="setUpDestination()">Add Sejour</a>
+       <a mat-raised-button color="primary" (click)="setUpDestination()" type="button">Add Sejour</a>
 
        <!--sejour-->
        <ng-container formArrayName="destination">
@@ -97,6 +97,16 @@
           </ng-container>
 
        </ng-container>
+
+       <mat-divider></mat-divider>
+
+       <div formArrayName="ServicesNonInclus">
+         <button type="button" mat-raised-button color="primary" (click)="addServicesNonInclus()"> Ajouter Un service non inclus </button> <br>
+         <div *ngFor="let s of ServicesNonInclus.controls; index as j">
+             <label> Service non Inclus N°: {{j+1}}</label>
+             <input type="text" class="form-control" [formControlName]="j">
+         </div>
+     </div>
 
        <section class="text-center">
         <button mat-raised-button color="accent" type="submit" [disabled]="VoyageForm.invalid">Submit</button>
