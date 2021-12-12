@@ -60,7 +60,7 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title ">{{v.libelle |uppercase}}</h5>
                                 <p class="card-text">
-                                    {{v.description}}
+                                    {{v.description| descriptionText}}
                                 </p>
                                 <button class="align-self-end" mat-raised-button color="accent"
                                     [routerLink]="['/user/list-Voyages',v.id]">Starts At {{v.prix}}<sup>DT</sup>

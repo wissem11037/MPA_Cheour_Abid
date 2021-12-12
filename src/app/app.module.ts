@@ -4,7 +4,6 @@ import { MatRadioModule} from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErreurComponent } from './components/erreur/erreur.component';
-import { DateVoyagePipe } from './Pipes/date-voyage.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,8 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    ErreurComponent,
-    DateVoyagePipe,
+    ErreurComponent
     
   ],
   imports: [

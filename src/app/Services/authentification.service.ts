@@ -1,34 +1,37 @@
+import { Observable, of, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { SignInData } from '../Models/sign-in-data';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthentificationService {
 
+  constructor(private router: Router) { }
 
-
-  Users: SignInData[] = [
-    new SignInData('user', 'password', false),
-    new SignInData('admin', 'admin', true)
-  ];
-
-  currentUser: string = "";
-  userState : boolean = false;
-
-
-  isAuthenticated(): boolean {
-    return this.currentUser != undefined;
-  }
-  checkCredentials(signInData: SignInData): boolean {
-    return (this.getUser(signInData.username) != undefined) && (this.getPassword(signInData.password) != undefined);
+  setToken(token: string) {
+    localStorage.setItem('token', token);
   }
 
-  getUser(username: string) {
-    return this.Users.find(user => user.username == username);
+  getToken() {
+    return localStorage.getItem('token');
   }
-  getPassword(password: string) {
-    return this.Users.find(user => user.password == password);
+
+  isLoggedIn() {
+    return this.getToken() !== null;
   }
-  constructor() { }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['user']);
+  }
+
+  login({ email, password }: any) {
+    if (email === 'admin@outlook.com' && password === 'admin') {
+      this.setToken('abcdefghijklmnopqrstuvwxyz');
+      this.router.navigate(['/admin']);
+    }
+  }
+  
 }

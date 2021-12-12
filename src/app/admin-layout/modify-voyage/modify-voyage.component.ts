@@ -84,7 +84,7 @@ export class ModifyVoyageComponent implements OnInit {
   }
 
   onSubmitForm() {
-    //this.voyageService.updateVoyage(this.identifiant,this.VoyageForm.value).subscribe();
+    this.voyageService.updateVoyage(this.identifiant,this.VoyageForm.value).subscribe();
   }
 
 

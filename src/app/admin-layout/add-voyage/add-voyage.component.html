@@ -2,9 +2,6 @@
     <h1>Add a new trip</h1>
     <form [formGroup]="VoyageForm" (ngSubmit)="onSubmitForm()">
 
-       <!-- +string(libelle) +string(image) +number(prix) +boolean(nouveau) +date(depart) +date(arrive) (sejour) string(description|textarea)-->
-       <!-- string(destination) string(description|textarea) string(image) -->
-
        <mat-form-field appearance="fill">
           <mat-label>Libelle</mat-label>
           <input matInput formControlName="libelle">
@@ -103,8 +100,10 @@
        <div formArrayName="ServicesNonInclus">
          <button type="button" mat-raised-button color="primary" (click)="addServicesNonInclus()"> Ajouter Un service non inclus </button> <br>
          <div *ngFor="let s of ServicesNonInclus.controls; index as j">
-             <label> Service non Inclus N°: {{j+1}}</label>
-             <input type="text" class="form-control" [formControlName]="j">
+             <mat-form-field appearance="fill">
+               <mat-label>Service non Inclus N°: {{j+1}}</mat-label>
+               <input matInput [formControlName]="j">
+            </mat-form-field>
          </div>
      </div>
 

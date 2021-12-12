@@ -104,8 +104,10 @@
       <div formArrayName="ServicesNonInclus">
         <button type="button" mat-raised-button color="primary" (click)="addServicesNonInclus()"> Ajouter Un service non inclus </button> <br>
         <div *ngFor="let s of ServicesNonInclus.controls; index as j">
-            <label> Service non Inclus N°: {{j+1}}</label>
-            <input type="text" class="form-control" [formControlName]="j">
+         <mat-form-field appearance="fill">
+            <mat-label>Service non Inclus N°: {{j+1}}</mat-label>
+            <input matInput [formControlName]="j">
+         </mat-form-field>
         </div>
     </div>
 

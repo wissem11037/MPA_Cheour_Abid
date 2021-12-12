@@ -15,21 +15,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authentificationService: AuthentificationService, private router:Router) { }
 
-  Login() {
-    if (this.authentificationService.checkCredentials(this.SignInForm.value)) {
-      this.authentificationService.currentUser = this.SignInForm.value.username;
-      this.authentificationService.userState = this.authentificationService.getUser(this.authentificationService.currentUser)?.isAdmin;
-      if (this.authentificationService.userState){
-        this.router.navigate(['/admin']);
-      } else {
-        this.router.navigate(['/user']);
-      }
+  onSubmit(){
+    if (this.SignInForm.valid) {
+      this.authentificationService.login(this.SignInForm.value);
     }
   }
 
   ngOnInit(): void {
     this.SignInForm = this.fb.group({
-      username: [''],
+      email: [''],
       password: ['']
     });
   }
