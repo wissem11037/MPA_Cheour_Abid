@@ -11,13 +11,12 @@ export class BackOfficeGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-   /**  if (this.authentificationService.userState){
+     if (this.authentificationService.userState){
       return true;
     }
     this.router.navigate(['']);
     return false;
-    */
-    return true;
+    
   }
   
   
