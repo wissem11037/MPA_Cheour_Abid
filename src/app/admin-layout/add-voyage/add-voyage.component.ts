@@ -36,7 +36,7 @@ export class AddVoyageComponent implements OnInit {
 
   getDate() {
     let Time = this.dateArrive?.value.getTime() - this.dateDepart?.value.getTime();
-    let Days = Time / (1000 * 3600 * 24);
+    let Days = (Time / (1000 * 3600 * 24))+1;
     return Days;
   }
 
