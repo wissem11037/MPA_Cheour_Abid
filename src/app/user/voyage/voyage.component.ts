@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { EmailValidator, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { Voyage } from 'src/app/Models/voyage';
@@ -43,7 +43,16 @@ export class VoyageComponent implements OnInit {
 
   onReset() {
     this.reservationForm.reset({
-
+      lastName: [''],
+      firstName: [''],
+      email: [''],
+      phoneNumber: [],
+      specDemand1: [false],
+      specDemand2: [false],
+      demand: [''],
+      trip:[this.identifiant],
+      state:['In Progress'],
+      date:[new Date(this.year, this.month, this.day)]
     });
   }
 
@@ -55,8 +64,8 @@ export class VoyageComponent implements OnInit {
     this.reservationForm = this.fb.group({
           lastName: [''],
           firstName: [''],
-          email: [''],
-          phoneNumber: [],
+          email: ['',Validators.email],
+          phoneNumber: [Validators.required,Validators.pattern("[0-9]{8}")],
           specDemand1: [false],
           specDemand2: [false],
           demand: [''],
@@ -66,6 +75,6 @@ export class VoyageComponent implements OnInit {
 
     });
   }
-
+ 
 
 }

@@ -10,9 +10,9 @@
                 <div class="col">
                     <h1 class="mb-5">//TRIP: {{v.libelle | titlecase }}</h1>
                     <div class="d-flex flex-column justify-content-center">
-                    <h2>TAKE OFF: {{v.dateDepart|date:"d MMMM YYYY"}}</h2>
-                    <h2>LANDING: {{v.dateArrive|date:"d MMMM YYYY"}}</h2>
-                    <h2>PRICE: {{v.prix }}<sup>DT</sup></h2>
+                        <h2>TAKE OFF: {{v.dateDepart|date:"d MMMM YYYY"}}</h2>
+                        <h2>LANDING: {{v.dateArrive|date:"d MMMM YYYY"}}</h2>
+                        <h2>PRICE: {{v.prix }}<sup>DT</sup></h2>
                     </div>
                 </div>
             </div>
@@ -96,8 +96,8 @@
         </div>
 
         <section class="text-center">
-            <button mat-raised-button color="accent" type="button">Reset</button>
-            <button mat-raised-button color="primary">Submit</button>
+            <button mat-raised-button color="accent" type="button" (click)="onReset()">Reset</button>
+            <button mat-raised-button color="primary" [disabled]="reservationForm.invalid">Submit</button>
         </section>
     </form>
 </div>
