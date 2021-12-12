@@ -19,5 +19,8 @@ export class ReservationComponent implements OnInit {
     .subscribe(data => this.lesreservations = data);
 
   }
-
+  onSupp(id:number){
+ 
+    this.lesreservations=this.lesreservations.filter(e=>e.id!=id);
+}
 }

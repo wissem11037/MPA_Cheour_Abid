@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Reservation } from 'src/app/Models/reservation';
 import { ReservationService } from 'src/app/Services/reservation.service';
@@ -11,7 +11,7 @@ import { ReservationService } from 'src/app/Services/reservation.service';
 export class ReservationCardComponent implements OnInit {
 
   @Input('reservation') r: Reservation;
-
+  @Output() supp=new EventEmitter<number>();
   lesreservations: Reservation[] = [];
 
   stateForm: FormGroup = new FormGroup({
@@ -21,12 +21,11 @@ export class ReservationCardComponent implements OnInit {
   constructor(private reservationService:ReservationService) { }
 
   onSupprimer(id: number){
-    this.reservationService.deleteReservation(id)
-    .subscribe();
-    this.lesreservations=this.lesreservations.filter(r=>r.id!=id);
+    this.reservationService.deleteReservation(id).subscribe(()=>this.supp.emit(id));
   }
 
   ngOnInit(): void {
+   
   }
 
 }

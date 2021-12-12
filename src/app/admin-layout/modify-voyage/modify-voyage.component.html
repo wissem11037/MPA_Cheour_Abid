@@ -1,119 +1,119 @@
 <div class="container">
-   <h1>Modify trip: [labeled {{voyage[0]?.libelle}} ID: {{voyage[0]?.id}}]</h1>
-   <form [formGroup]="VoyageForm" (ngSubmit)="onSubmitForm()">
+    <h1>Modify trip: [labeled {{voyage[0]?.libelle}} ID: {{voyage[0]?.id}}]</h1>
+    <form [formGroup]="VoyageForm" (ngSubmit)="onSubmitForm()">
 
-      <!-- +string(libelle) +string(image) +number(prix) +boolean(nouveau) +date(depart) +date(arrive) (sejour) string(description|textarea)-->
-      <!-- string(destination) string(description|textarea) string(image) -->
+        <!-- +string(libelle) +string(image) +number(prix) +boolean(nouveau) +date(depart) +date(arrive) (sejour) string(description|textarea)-->
+        <!-- string(destination) string(description|textarea) string(image) -->
 
-      <mat-form-field appearance="fill">
-         <mat-label>Libelle</mat-label>
-         <input matInput formControlName="libelle">
-      </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Libelle</mat-label>
+            <input matInput formControlName="libelle">
+        </mat-form-field>
 
-      <br>
+        <br>
 
-      <mat-form-field appearance="fill">
-         <mat-label>Image</mat-label>
-         <input matInput formControlName="photo">
-      </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Image</mat-label>
+            <input matInput formControlName="photo">
+        </mat-form-field>
 
-      <br>
+        <br>
 
-      <mat-form-field appearance="fill">
-         <mat-label>Prix</mat-label>
-         <input matInput type="number" formControlName="prix">
-      </mat-form-field>
-      
-      <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Prix</mat-label>
+            <input matInput type="number" formControlName="prix">
+        </mat-form-field>
 
-      <mat-checkbox formControlName="nouveau">Nouveau</mat-checkbox>
+        <br>
 
-      <br>
+        <mat-checkbox formControlName="nouveau">Nouveau</mat-checkbox>
 
-      <mat-form-field appearance="fill">
-         <mat-label>Enter a date range</mat-label>
-         <mat-date-range-input [rangePicker]="picker">
-            <input matStartDate formControlName="dateDepart" [min]="today" placeholder="Start date">
-            <input matEndDate formControlName="dateArrive" placeholder="End date">
-         </mat-date-range-input>
-         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-         <mat-date-range-picker #picker>
-           <mat-date-range-picker-actions>
-               <button mat-button matDateRangePickerCancel>Cancel</button>
-               <button mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
-             </mat-date-range-picker-actions>
-         </mat-date-range-picker>
-      </mat-form-field>
+        <br>
 
-      <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate formControlName="dateDepart" [min]="today" placeholder="Start date">
+                <input matEndDate formControlName="dateArrive" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker>
+                <mat-date-range-picker-actions>
+                    <button mat-button matDateRangePickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
+                </mat-date-range-picker-actions>
+            </mat-date-range-picker>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
-         <mat-label>Description</mat-label>
-         <textarea matInput formControlName="description"></textarea>
-      </mat-form-field>
+        <br>
 
-      <mat-divider></mat-divider>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
 
-      <a mat-raised-button color="primary" (click)="setUpDestination()">Add Sejour</a>
+        <mat-divider></mat-divider>
 
-      <!--sejour-->
-      <ng-container formArrayName="destination">
+        <a mat-raised-button color="primary" (click)="setUpDestination() " [disabled]="destination.length!=0">Add Sejour</a>
 
-         <ng-container *ngFor="let destinationForm of destination.controls; let i=index">
+        <!--sejour-->
+        <ng-container formArrayName="destination">
 
-            <div class="d-flex justify-content-between alert alert-secondary">
+            <ng-container *ngFor="let destinationForm of destination.controls; let i=index">
 
-               <ng-container [formGroupName]="i">
-                   
-                  <h2>Sejour N°{{i+1}}</h2>
+                <div class="d-flex justify-content-between alert alert-secondary">
 
-                  <div hidden>
-                     <mat-form-field appearance="fill">
-                        <mat-label>Prix</mat-label>
-                        <input matInput type="number" formControlName="nbJour">
-                     </mat-form-field>
-                  </div>
+                    <ng-container [formGroupName]="i">
 
-                  <br>
+                        <h2>Sejour N°{{i+1}}</h2>
 
-                  <mat-form-field appearance="fill">
-                     <mat-label>destination</mat-label>
-                     <input matInput formControlName="destination">
-                  </mat-form-field>
+                        <div hidden>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Prix</mat-label>
+                                <input matInput type="number" formControlName="nbJour">
+                            </mat-form-field>
+                        </div>
 
-                  <mat-form-field appearance="fill">
-                     <mat-label>Image</mat-label>
-                     <input matInput formControlName="photo">
-                  </mat-form-field>
+                        <br>
 
-                  <mat-form-field appearance="fill">
-                     <mat-label>Description</mat-label>
-                     <textarea matInput formControlName="description"></textarea>
-                  </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>destination</mat-label>
+                            <input matInput formControlName="destination">
+                        </mat-form-field>
 
-               </ng-container>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Image</mat-label>
+                            <input matInput formControlName="photo">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Description</mat-label>
+                            <textarea matInput formControlName="description"></textarea>
+                        </mat-form-field>
+
+                    </ng-container>
+                </div>
+
+            </ng-container>
+
+        </ng-container>
+
+
+        <mat-divider></mat-divider>
+
+        <div formArrayName="ServicesNonInclus">
+            <button type="button" mat-raised-button color="primary" (click)="addServicesNonInclus()"> Ajouter Un service non inclus </button> <br>
+            <div *ngFor="let s of ServicesNonInclus.controls; index as j">
+                <mat-form-field appearance="fill">
+                    <mat-label>Service non Inclus N°: {{j+1}}</mat-label>
+                    <input matInput [formControlName]="j">
+                </mat-form-field>
             </div>
-
-         </ng-container>
-
-      </ng-container>
-
-      
-      <mat-divider></mat-divider>
-
-      <div formArrayName="ServicesNonInclus">
-        <button type="button" mat-raised-button color="primary" (click)="addServicesNonInclus()"> Ajouter Un service non inclus </button> <br>
-        <div *ngFor="let s of ServicesNonInclus.controls; index as j">
-         <mat-form-field appearance="fill">
-            <mat-label>Service non Inclus N°: {{j+1}}</mat-label>
-            <input matInput [formControlName]="j">
-         </mat-form-field>
         </div>
-    </div>
 
-      <section class="text-center">
-       <button mat-raised-button color="accent" type="submit" [disabled]="VoyageForm.invalid">Submit</button>
-       <button mat-raised-button color="primary" type="button" (click)="onReset()">Reset</button>
-   </section>
-   </form>
+        <section class="text-center">
+            <button mat-raised-button color="accent" type="submit" [disabled]="VoyageForm.invalid">Submit</button>
+            <button mat-raised-button color="primary" type="button" (click)="onReset()">Reset</button>
+        </section>
+    </form>
 </div>

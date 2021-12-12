@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4" *ngFor="let r of lesreservations">
-            <app-reservation-card [reservation]="r"></app-reservation-card>
+            <app-reservation-card [reservation]="r" (supp)="onSupp($event)"></app-reservation-card>
         </div>
     </div>
 </div>
